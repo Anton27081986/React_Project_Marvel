@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Spinner from '../spinner/Spinner';
 import Skeleton from '../skeleton/Skeleton';
@@ -40,7 +42,7 @@ class CharInfo extends Component{
             .then(this.onCharLoaded)
             .catch(this.onError)
 
-        this.foo.bar = 0;
+        // this.foo.bar = 0;
     }
 
     onCharLoaded = (char) => {
@@ -127,6 +129,10 @@ const View = ({char}) => {
             </ul>
         </>
     )
+}
+
+CharInfo.propTypes = {
+    charId: PropTypes.number
 }
 
 export default CharInfo;
